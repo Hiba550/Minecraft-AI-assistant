@@ -1,33 +1,171 @@
-# MultiLoader Template
+# Minecraft AI Assistant
 
-This project provides a Gradle project template that can compile Minecraft mods for multiple modloaders using a common project for the sources. This project does not require any third party libraries or dependencies. If you have any questions or want to discuss the project, please join our [Discord](https://discord.myceliummod.network).
+![Minecraft AI Assistant](https://img.shields.io/badge/Minecraft-1.21.5-green) ![Java](https://img.shields.io/badge/Java-21-orange) ![License](https://img.shields.io/badge/License-MIT-blue)
 
-## Getting Started
+An intelligent AI-powered assistant mod for Minecraft that integrates Google Gemini 2.5 Flash models to provide helpful responses and command execution assistance directly in-game.
 
-### IntelliJ IDEA
-This guide will show how to import the MultiLoader Template into IntelliJ IDEA. The setup process is roughly equivalent to setting up the modloaders independently and should be very familiar to anyone who has worked with their MDKs.
+## 🌟 Features
 
-1. Clone or download this repository to your computer.
-2. Configure the project by setting the properties in the `gradle.properties` file. You will also need to change the `rootProject.name`  property in `settings.gradle`, this should match the folder name of your project, or else IDEA may complain.
-3. Open the template's root folder as a new project in IDEA. This is the folder that contains this README.md file and the gradlew executable.
-4. If your default JVM/JDK is not Java 21 you will encounter an error when opening the project. This error is fixed by going to `File > Settings > Build, Execution, Deployment > Build Tools > Gradle > Gradle JVM` and changing the value to a valid Java 21 JVM. You will also need to set the Project SDK to Java 21. This can be done by going to `File > Project Structure > Project SDK`. Once both have been set open the Gradle tab in IDEA and click the refresh button to reload the project.
-5. Open your Run/Debug Configurations. Under the `Application` category there should now be options to run Fabric and NeoForge projects. Select one of the client options and try to run it.
-6. Assuming you were able to run the game in step 5 your workspace should now be set up.
+### ✨ Core Functionality
+- **AI Chat Commands**: Use `/ai <message>` to chat with the AI assistant
+- **Command Assistance**: Use `/aic <request>` to get help with Minecraft commands
+- **Multiple AI Models**: Switch between Gemini 2.5 Flash and Gemini 2.5 Flash Thinking models
+- **Real-time Responses**: Asynchronous API calls for smooth gameplay experience
 
-### Eclipse
-While it is possible to use this template in Eclipse it is not recommended. During the development of this template multiple critical bugs and quirks related to Eclipse were found at nearly every level of the required build tools. While we continue to work with these tools to report and resolve issues support for projects like these are not there yet. For now Eclipse is considered unsupported by this project. The development cycle for build tools is notoriously slow so there are no ETAs available.
+### ⚙️ Configuration
+- **Easy Setup**: Simple configuration GUI accessible via keybind (default: K key)
+- **API Key Management**: Secure storage of your Google AI API key
+- **Model Selection**: Choose your preferred Gemini model
+- **Persistent Settings**: TOML-based configuration that saves between sessions
 
-## Development Guide
-When using this template the majority of your mod should be developed in the `common` project. The `common` project is compiled against the vanilla game and is used to hold code that is shared between the different loader-specific versions of your mod. The `common` project has no knowledge or access to ModLoader specific code, apis, or concepts. Code that requires something from a specific loader must be done through the project that is specific to that loader, such as the `fabric` or `neoforge` projects.
+### 🎮 User Experience
+- **Intuitive Interface**: Clean, modern configuration screen
+- **Keybind Support**: Customizable keybinding for quick access
+- **Error Handling**: Graceful handling of API errors and invalid configurations
+- **Multi-language Ready**: Localization support for different languages
 
-Loader specific projects such as the `fabric` and `neoforge` project are used to load the `common` project into the game. These projects also define code that is specific to that loader. Loader specific projects can access all the code in the `common` project. It is important to remember that the `common` project can not access code from loader specific projects.
+## 🔧 Installation
 
-## Removing Platforms and Loaders
-While this template has support for many modloaders, new loaders may appear in the future, and existing loaders may become less relevant.
+### Prerequisites
+- Minecraft 1.21.5
+- Java 21 or higher
+- A Google AI API key (get one from [Google AI Studio](https://aistudio.google.com/))
 
-Removing loader specific projects is as easy as deleting the folder, and removing the `include("projectname")` line from the `settings.gradle` file.
-For example if you wanted to remove support for `forge` you would follow the following steps:
+### Mod Loaders Supported
+- **Fabric** (with Fabric API)
+- **Forge** 
+- **NeoForge**
 
-1. Delete the subproject folder. For example, delete `MultiLoader-Template/forge`.
-2. Remove the project from `settings.gradle`. For example, remove `include("forge")`. 
-# Minecraft-AI-assistant
+### Steps
+1. Download the appropriate jar file for your mod loader from the releases page
+2. Place the jar file in your `mods` folder
+3. Launch Minecraft
+4. Press the default keybind (K) or configure it in Options > Controls > Key Binds > Minecraft AI Assistant
+5. Enter your Google AI API key in the configuration screen
+6. Start chatting with your AI assistant!
+
+## 🎯 Usage
+
+### Getting Your API Key
+1. Visit [Google AI Studio](https://aistudio.google.com/)
+2. Sign in with your Google account
+3. Navigate to the API keys section
+4. Generate a new API key
+5. Copy the key and paste it into the mod's configuration screen
+
+### Commands
+- **`/ai <message>`** - Chat with the AI assistant
+  - Example: `/ai How do I make a iron pickaxe?`
+  
+- **`/aic <request>`** - Get help with Minecraft commands
+  - Example: `/aic How do I teleport to coordinates 100 64 200?`
+
+### Keybinds
+- **Open AI Assistant Config** - Default: K key (customizable in controls)
+
+## 🛠️ Configuration
+
+The mod stores its configuration in `config/minecraft-ai-assistant.toml`:
+
+```toml
+[ai]
+apiKey = "your-api-key-here"
+model = "gemini-2.0-flash-exp"  # or "gemini-2.0-flash-thinking-exp"
+```
+
+### Available Models
+- **gemini-2.0-flash-exp**: Fast, efficient responses for general queries
+- **gemini-2.0-flash-thinking-exp**: More thoughtful, detailed responses for complex questions
+
+## 🔧 Development
+
+### Building from Source
+
+#### Prerequisites
+- Java 21 JDK
+- Git
+
+#### Steps
+```bash
+git clone https://github.com/yourusername/minecraft-ai-assistant.git
+cd minecraft-ai-assistant
+./gradlew build
+```
+
+#### Running in Development
+```bash
+# Fabric
+./gradlew fabric:runClient
+
+# Forge  
+./gradlew forge:runClient
+
+# NeoForge
+./gradlew neoforge:runClient
+```
+
+### Project Structure
+This is a multiloader project using the common/platform architecture:
+
+- **`common/`** - Shared code across all mod loaders
+- **`fabric/`** - Fabric-specific implementation
+- **`forge/`** - Forge-specific implementation  
+- **`neoforge/`** - NeoForge-specific implementation
+
+### Key Components
+- **`GeminiClient`** - Handles API communication with Google Gemini
+- **`AIConfig`** - Configuration management and TOML serialization
+- **`AIConfigScreen`** - GUI for mod configuration
+- **`AICommand`** & **`AICommandExecutor`** - Command registration and execution
+
+## 📊 API Usage
+
+The mod uses the Google Gemini API with the following endpoints:
+- `https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent`
+
+API calls are made asynchronously to prevent game lag and include proper error handling for:
+- Invalid API keys
+- Network connectivity issues
+- Rate limiting
+- Malformed requests
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+### Development Guidelines
+- Follow existing code style and conventions
+- Test changes on all supported mod loaders
+- Update documentation as needed
+- Ensure proper error handling
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Google for providing the Gemini AI API
+- The Minecraft modding community
+- Fabric, Forge, and NeoForge teams for their excellent mod loaders
+- MultiLoader Template for the project structure
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/yourusername/minecraft-ai-assistant/issues) page
+2. Create a new issue with detailed information about your problem
+3. Include your Minecraft version, mod loader, and any error logs
+
+## 🔮 Future Plans
+
+- Integration with additional AI models
+- Voice input support
+- Advanced command parsing
+- Plugin system for custom AI behaviors
+- Multiplayer synchronization features
+
+---
+
+**Note**: This mod requires an active internet connection and a valid Google AI API key to function. API usage may be subject to Google's terms of service and rate limits.
