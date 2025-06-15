@@ -70,7 +70,7 @@ The mod stores its configuration in `config/minecraft-ai-assistant.toml`:
 ```toml
 [ai]
 apiKey = "your-api-key-here"
-model = "gemini-2.0-flash-exp"  # or "gemini-2.0-flash-thinking-exp"
+model = "gemini-2.0-flash-exp"  # or "gemini-2.0-flash-thinking-exp" // cwill be changes according to AI studio
 ```
 
 ### Available Models
