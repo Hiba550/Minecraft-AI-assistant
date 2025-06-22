@@ -4,27 +4,27 @@
 
 An intelligent AI-powered assistant mod for Minecraft that integrates Google Gemini 2.5 Flash models to provide helpful responses and command execution assistance directly in-game.
 
-## 🌟 Features
+## Features
 
-### ✨ Core Functionality
+### Core Functionality
 - **AI Chat Commands**: Use `/ai <message>` to chat with the AI assistant
 - **Command Assistance**: Use `/aic <request>` to get help with Minecraft commands
 - **Multiple AI Models**: Switch between Gemini 2.5 Flash and Gemini 2.5 Flash Thinking models
 - **Real-time Responses**: Asynchronous API calls for smooth gameplay experience
 
-### ⚙️ Configuration
+### Configuration
 - **Easy Setup**: Simple configuration GUI accessible via keybind (default: K key)
 - **API Key Management**: Secure storage of your Google AI API key
 - **Model Selection**: Choose your preferred Gemini model
 - **Persistent Settings**: TOML-based configuration that saves between sessions
 
-### 🎮 User Experience
+### User Experience
 - **Intuitive Interface**: Clean, modern configuration screen
 - **Keybind Support**: Customizable keybinding for quick access
 - **Error Handling**: Graceful handling of API errors and invalid configurations
 - **Multi-language Ready**: Localization support for different languages
 
-## 🔧 Installation
+## Installation
 
 ### Prerequisites
 - Minecraft 1.21.5
@@ -44,7 +44,7 @@ An intelligent AI-powered assistant mod for Minecraft that integrates Google Gem
 5. Enter your Google AI API key in the configuration screen
 6. Start chatting with your AI assistant!
 
-## 🎯 Usage
+## Usage
 
 ### Getting Your API Key
 1. Visit [Google AI Studio](https://aistudio.google.com/)
@@ -77,7 +77,7 @@ model = "gemini-2.0-flash-exp"  # or "gemini-2.0-flash-thinking-exp" // cwill be
 - **gemini-2.0-flash-exp**: Fast, efficient responses for general queries
 - **gemini-2.0-flash-thinking-exp**: More thoughtful, detailed responses for complex questions
 
-## 🔧 Development
+## Development
 
 ### Building from Source
 
@@ -118,7 +118,7 @@ This is a multiloader project using the common/platform architecture:
 - **`AIConfigScreen`** - GUI for mod configuration
 - **`AICommand`** & **`AICommandExecutor`** - Command registration and execution
 
-## 📊 API Usage
+## API Usage
 
 The mod uses the Google Gemini API with the following endpoints:
 - `https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent`
@@ -129,7 +129,7 @@ API calls are made asynchronously to prevent game lag and include proper error h
 - Rate limiting
 - Malformed requests
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
@@ -139,18 +139,18 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 - Update documentation as needed
 - Ensure proper error handling
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Google for providing the Gemini AI API
 - The Minecraft modding community
 - Fabric, Forge, and NeoForge teams for their excellent mod loaders
 - MultiLoader Template for the project structure
 
-## 📞 Support
+## Support
 
 If you encounter any issues or have questions:
 
@@ -158,7 +158,7 @@ If you encounter any issues or have questions:
 2. Create a new issue with detailed information about your problem
 3. Include your Minecraft version, mod loader, and any error logs
 
-## 🔮 Future Plans
+## Future Plans
 
 - Integration with additional AI models
 - Voice input support
