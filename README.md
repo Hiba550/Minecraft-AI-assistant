@@ -1,6 +1,6 @@
 # Minecraft AI Assistant
 
-![Minecraft AI Assistant](https://img.shields.io/badge/Minecraft-1.21.5-green) ![Java](https://img.shields.io/badge/Java-21-orange) ![License](https://img.shields.io/badge/License-MIT-blue)
+![Minecraft AI Assistant](https://img.shields.io/badge/Minecraft-1.21.5-green) ![Minecraft AI Assistant](https://img.shields.io/badge/Minecraft-1.21.6-green) ![Java](https://img.shields.io/badge/Java-21-orange) ![License](https://img.shields.io/badge/License-MIT-blue)
 
 An intelligent AI-powered assistant mod for Minecraft that integrates Google Gemini 2.5 Flash models to provide helpful responses and command execution assistance directly in-game.
 
