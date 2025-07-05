@@ -4,8 +4,6 @@
 
 An intelligent AI-powered assistant mod for Minecraft that integrates Google Gemini 2.5 Flash models to provide helpful responses and command execution assistance directly in-game.
 
-## Features
-
 ### Core Functionality
 - **AI Chat Commands**: Use `/ai <message>` to chat with the AI assistant
 - **Command Assistance**: Use `/aic <request>` to get help with Minecraft commands
