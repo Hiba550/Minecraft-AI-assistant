@@ -127,9 +127,6 @@ API calls are made asynchronously to prevent game lag and include proper error h
 - Rate limiting
 - Malformed requests
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
 ### Development Guidelines
 - Follow existing code style and conventions
